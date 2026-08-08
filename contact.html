@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CONTACT &mdash; hei ap&#333;p&#333;</title>
-<meta name="description" content="hei apopo へのお問い合わせ。">
+<title>CONTACT | hei apopo</title>
+<meta name="description" content="hei apopo（ヘイアポポ）へのお問い合わせ。出演依頼・楽曲使用・取材など。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="CONTACT &mdash; hei ap&#333;p&#333;">
+<meta property="og:title" content="CONTACT | hei apopo">
 <meta property="og:description" content="No solos. No vocals. Just songs.">
 <meta property="og:url" content="https://heiapopo.github.io/">
 <meta property="og:image" content="https://heiapopo.github.io/img/ogp.jpg">
@@ -37,12 +37,14 @@
 <section>
   <div class="wrap rise">
     <h1 class="page-title">Contact</h1>
+    <div class="page-rule"></div>
     <p class="page-lead jp">出演依頼・楽曲使用・取材などのご連絡はこちらから。</p>
   </div>
 </section>
 
 <section style="border-top:none;padding-top:0">
   <div class="wrap rise">
+
     <form class="form" action="https://formspree.io/f/mdenkrvj" method="POST">
 
       <div class="field">
@@ -71,11 +73,25 @@
       </div>
 
       <input type="hidden" name="_subject" value="hei apopo website contact">
+      <input type="hidden" name="_next" value="https://heiapopo.github.io/thanks.html">
+
+      <p class="form-err" id="form-err" hidden>
+        送信できませんでした。時間をおいて試すか、
+        <a href="mailto:heiapopo.jp@gmail.com">heiapopo.jp@gmail.com</a> までご連絡ください。
+      </p>
+
       <button type="submit">Send</button>
     </form>
 
+    <div class="form-done" id="form-done" hidden>
+      <p class="form-done__t">Sent.</p>
+      <p class="form-done__s jp">送信しました。内容を確認のうえ、折り返しご連絡いたします。</p>
+    </div>
+
     <p class="form__note jp">
-      フォームが使えない場合は <a href="mailto:heiapopo.jp@gmail.com" style="border-bottom:1px solid var(--line)">heiapopo.jp@gmail.com</a> まで直接ご連絡ください。
+      フォームが使えない場合は
+      <a href="mailto:heiapopo.jp@gmail.com">heiapopo.jp@gmail.com</a>
+      まで直接ご連絡ください。
     </p>
   </div>
 </section>
@@ -121,6 +137,30 @@
     es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
   },{threshold:.1});
   items.forEach(function(el){io.observe(el);});
+})();
+</script>
+
+
+<script>
+(function(){
+  var f=document.querySelector('.form');
+  if(!f||!window.fetch)return;
+  var done=document.getElementById('form-done'),
+      err=document.getElementById('form-err'),
+      btn=f.querySelector('button');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    err.hidden=true;btn.disabled=true;btn.textContent='Sending';
+    fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+      .then(function(r){
+        if(!r.ok)throw new Error();
+        f.hidden=true;done.hidden=false;
+        done.scrollIntoView({block:'center',behavior:'smooth'});
+      })
+      .catch(function(){
+        btn.disabled=false;btn.textContent='Send';err.hidden=false;
+      });
+  });
 })();
 </script>
 
