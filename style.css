@@ -126,7 +126,9 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
 
 /* ライブ写真ストリップ */
 .shots{display:grid;gap:clamp(10px,1.4vw,16px);
-  max-width:80%;margin:0 0 clamp(22px,3vw,32px)}
+  margin:0 0 clamp(22px,3vw,32px)}
+/* 2枚並びも、1枚あたりの大きさを3枚並びと揃える */
+.shots--2{max-width:calc(66.666% - (clamp(10px,1.4vw,16px) / 3))}
 .ev + .ev{margin-top:clamp(40px,5vw,64px)}
 .shots--3{grid-template-columns:repeat(3,1fr)}
 .shots--2{grid-template-columns:repeat(2,1fr)}
