@@ -118,6 +118,8 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
 /* ============ LIVE ============ */
 .gig{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,5vw,64px);align-items:start;
   padding:clamp(28px,4vw,44px) 0;border-bottom:1px solid var(--line)}
+/* NEXT は1公演だけなので区切り線を出さない */
+.ev:only-of-type .gig{border-bottom:none;padding-bottom:0}
 .gig__date{font-size:clamp(26px,4.2vw,46px);font-weight:200;line-height:1.1}
 .gig__day{font-size:10.5px;letter-spacing:.3em;color:var(--mute);margin-top:.6em}
 .gig__venue{font-size:18px;letter-spacing:.05em}
