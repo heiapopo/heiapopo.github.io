@@ -124,6 +124,12 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
 .gig__bill{font-size:13.5px;color:var(--cobalt);margin-top:.5em;letter-spacing:.08em}
 .gig__info{margin-top:1.3em;font-size:13px;color:var(--mute);line-height:2.05}
 
+/* ライブ写真ストリップ */
+.shots{display:grid;gap:clamp(10px,1.4vw,16px);margin-top:clamp(20px,2.6vw,30px)}
+.shots--3{grid-template-columns:repeat(3,1fr)}
+.shots--2{grid-template-columns:repeat(2,1fr)}
+.shots img{width:100%;height:auto;display:block;background:#E4E2DD}
+
 .arch{list-style:none;border-top:1px solid var(--line)}
 .arch li{display:grid;grid-template-columns:130px 1fr;gap:1.5em;
   padding:1.25em 0;border-bottom:1px solid var(--line)}
@@ -221,5 +227,9 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
   .news li{grid-template-columns:1fr;gap:.7em}
   .news .go{justify-self:start;margin-top:.4em}
   .arch li{grid-template-columns:1fr;gap:.4em}
+  .shots{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
+  .shots::-webkit-scrollbar{display:none}
+  .shots img{flex:0 0 74%;scroll-snap-align:start}
   .gig{grid-template-columns:1fr;gap:16px}
 }
