@@ -124,6 +124,7 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
   margin:0 0 clamp(22px,3vw,32px)}
 /* 2枚並びも、1枚あたりの大きさを3枚並びと揃える */
 .shots--2{max-width:calc(66.666% - (clamp(10px,1.4vw,16px) / 3))}
+.shots--1{max-width:calc(33.333% - (clamp(10px,1.4vw,16px) * 2 / 3))}
 .ev + .ev{margin-top:clamp(40px,5vw,64px)}
 .shots--3{grid-template-columns:repeat(3,1fr)}
 .shots--2{grid-template-columns:repeat(2,1fr)}
@@ -162,6 +163,13 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
   letter-spacing:.2em;text-transform:uppercase;text-decoration:none;
   border-bottom:1px solid var(--ink);padding-bottom:.2em;transition:color .3s,border-color .3s}
 .discs .go:hover{color:var(--vermilion);border-color:var(--vermilion)}
+
+/* ============ GOODS ============ */
+.goods-info{padding:clamp(22px,3vw,34px) 0;border-bottom:1px solid var(--line)}
+.goods__name{font-size:18px;letter-spacing:.05em}
+.goods__variant{margin-top:.5em;font-size:13.5px;letter-spacing:.06em;color:var(--cobalt)}
+.goods__price{margin-top:1em;font-size:13px;letter-spacing:.06em;color:var(--mute)}
+.goods__price.is-out{text-transform:uppercase;font-size:10.5px;letter-spacing:.2em}
 
 /* ============ VIDEO ============ */
 .video{aspect-ratio:16/9;background:#E4E2DD;border:1px solid var(--line)}
@@ -227,6 +235,7 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
   .nav a{display:block;padding:1.15em 0;font-size:12px}
 
   .discs{grid-template-columns:repeat(2,1fr)}
+  .shots--1{max-width:none}
   .news li{grid-template-columns:1fr;gap:.7em}
   .news .go{justify-self:start;margin-top:.4em}
   .arch li{grid-template-columns:1fr;gap:.4em}
