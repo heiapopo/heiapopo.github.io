@@ -8,7 +8,7 @@
   --ochre:#E3A526;
   --cobalt:#2B3C9B;
   --line:rgba(22,22,26,.14);
-  --rail:44px;
+  --rail:0px;
   --head:116px;
   --pad:clamp(24px,6vw,88px);
 }
@@ -27,12 +27,6 @@ body{
   padding-left:var(--rail);
   padding-top:var(--head);
   overflow-x:hidden;
-}
-
-/* 左端の帯（アルバム期はバーミリオン） */
-body::before{
-  content:"";position:fixed;top:0;left:0;bottom:0;
-  width:var(--rail);background:var(--vermilion);z-index:300;
 }
 
 img{max-width:100%;display:block}
@@ -146,8 +140,9 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
 .arch .body small{display:block;font-size:12px;color:var(--mute);margin-top:.4em}
 
 /* ============ BIOGRAPHY ============ */
-.bio-photo{width:100%;height:auto;display:block;background:#E4E2DD;
-  margin-bottom:clamp(40px,6vw,72px)}
+.bio-photo{width:100%;height:auto;display:block;background:#E4E2DD}
+.bio-credit{margin:1.1em 0 clamp(40px,6vw,72px);
+  font-size:12.5px;letter-spacing:.1em;color:var(--mute);line-height:1.9}
 .bio{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px)}
 .bio p+p{margin-top:1.5em}
 .bio__jp{font-size:15px;line-height:2.3;line-break:strict;word-break:auto-phrase}
@@ -215,7 +210,7 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
 
 /* ============ モバイル ============ */
 @media (max-width:900px){
-  :root{--rail:14px;--head:64px}
+  :root{--head:64px}
   .site-head{flex-direction:row;justify-content:center;gap:0}
   .site-head__logo img{height:22px}
   .burger{display:block}
