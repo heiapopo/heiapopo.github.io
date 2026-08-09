@@ -179,5 +179,34 @@
 })();
 </script>
 
+
+<script>
+(function(){
+  document.querySelectorAll('.shots').forEach(function(strip){
+    var imgs = strip.querySelectorAll('img');
+    if(imgs.length < 2) return;
+    var dots = document.createElement('div');
+    dots.className = 'dots';
+    imgs.forEach(function(_, i){
+      var d = document.createElement('span');
+      if(i === 0) d.className = 'on';
+      dots.appendChild(d);
+    });
+    strip.parentNode.insertBefore(dots, strip.nextSibling);
+    var timer;
+    strip.addEventListener('scroll', function(){
+      clearTimeout(timer);
+      timer = setTimeout(function(){
+        var w = imgs[0].offsetWidth + 10;
+        var i = Math.round(strip.scrollLeft / w);
+        dots.querySelectorAll('span').forEach(function(d, n){
+          d.className = (n === i) ? 'on' : '';
+        });
+      }, 60);
+    }, {passive:true});
+  });
+})();
+</script>
+
 </body>
 </html>

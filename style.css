@@ -136,6 +136,8 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
 .shots--2{grid-template-columns:repeat(2,1fr)}
 .shots img{width:100%;height:auto;display:block;background:#E4E2DD}
 
+.dots{display:none}
+
 .arch{list-style:none;border-top:1px solid var(--line)}
 .arch li{display:grid;grid-template-columns:130px 1fr;gap:1.5em;
   padding:1.25em 0;border-bottom:1px solid var(--line)}
@@ -233,9 +235,18 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
   .news li{grid-template-columns:1fr;gap:.7em}
   .news .go{justify-self:start;margin-top:.4em}
   .arch li{grid-template-columns:1fr;gap:.4em}
-  .shots{display:flex;gap:10px;max-width:none;overflow-x:auto;scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
+  .shots{display:flex;align-items:flex-start;gap:10px;max-width:none;
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px;
+    margin-bottom:12px}
   .shots::-webkit-scrollbar{display:none}
-  .shots img{flex:0 0 74%;scroll-snap-align:start}
+  .shots img{flex:0 0 74%;width:auto;scroll-snap-align:start}
+
+  .dots{display:flex;gap:7px;justify-content:center;margin:0 0 24px}
+  .dots span{width:5px;height:5px;border-radius:50%;
+    background:rgba(22,22,26,.2);transition:background .3s}
+  .dots span.on{background:var(--vermilion)}
+
+  .discs .meta{white-space:nowrap;font-size:9.5px;letter-spacing:.1em}
   .gig{grid-template-columns:1fr;gap:16px}
 }
