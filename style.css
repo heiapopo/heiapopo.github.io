@@ -243,5 +243,10 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
   .dots span.on{background:var(--vermilion)}
 
   .discs .meta{white-space:nowrap;font-size:9.5px;letter-spacing:.1em}
+
+  /* BIOGRAPHY：指定の改行位置で収まるよう文字を詰める */
+  .bio__jp{font-size:13.5px;line-height:2.15}
+  .bio__en{font-size:13px;line-height:2.05}
+  .bio-credit{font-size:11.5px;letter-spacing:.06em;line-height:2}
   .gig{grid-template-columns:1fr;gap:16px}
 }
