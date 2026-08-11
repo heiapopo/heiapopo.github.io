@@ -150,6 +150,8 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
 .bio__jp{font-size:15px;line-height:2.3;line-break:strict;word-break:auto-phrase}
 /* 途中で折り返したくない語のまとまり */
 .nb{display:inline-block}
+/* スマホでのみ改行する箇所 */
+.br-sp{display:none}
 .bio__en{font-size:14px;color:var(--mute);line-height:2.15}
 .bio__members{margin-top:2.4em;padding-top:1.6em;border-top:1px solid var(--line);
   font-size:12.5px;letter-spacing:.1em;color:var(--mute)}
@@ -260,5 +262,6 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
   .bio-credit{font-size:11.5px;letter-spacing:.06em;line-height:2}
   /* ルーツの一覧は「と、」まで1行に収める */
   .roots{font-size:12.5px;letter-spacing:0}
+  .br-sp{display:inline}
   .gig{grid-template-columns:1fr;gap:16px}
 }
