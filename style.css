@@ -170,8 +170,7 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
 .goods-ev{padding-bottom:clamp(34px,4.5vw,56px);border-bottom:1px solid var(--line)}
 .goods-info{margin-bottom:clamp(18px,2.4vw,28px)}
 .goods__name{font-size:18px;letter-spacing:.05em}
-.goods__price{color:var(--mute)}
-.goods__price::before{content:" - "}
+.goods__price{color:var(--mute);white-space:nowrap}
 .goods__variant{margin-top:.55em;font-size:13.5px;letter-spacing:.06em;color:var(--cobalt)}
 
 /* ============ VIDEO ============ */
