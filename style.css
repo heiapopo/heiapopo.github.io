@@ -130,6 +130,7 @@ section{padding:clamp(64px,9vw,130px) 0;border-top:1px solid var(--line)}
 .shots--1{max-width:calc(33.333% - (clamp(10px,1.4vw,16px) * 2 / 3))}
 .ev + .ev{margin-top:clamp(40px,5vw,64px)}
 .shots--3{grid-template-columns:repeat(3,1fr)}
+.shots--4{grid-template-columns:repeat(4,1fr)}
 .shots--2{grid-template-columns:repeat(2,1fr)}
 .shots img{width:100%;height:auto;display:block;background:#E4E2DD}
 
